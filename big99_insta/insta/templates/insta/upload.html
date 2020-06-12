@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %} 업로드 화면 입니다 {% endblock %}
+
+{% block content %}
+
+    <br><br><br>
+
+    <form action="" method="post" enctype="multipart/form-data"> {# enctype : 모든 타입 가능 / 텍스트타입 외에 이미지파일?등등 입력할 때#}
+        {% csrf_token %}
+        {{ form.as_p }} {# form.as_태그형태 : form안에 들어가는 input의 형태를 해당 태그형태로 넣어줘 #}
+        <input type="submit" class="btn btn-primary" value="업로드">
+
+    </form>
+
+
+{% endblock %}

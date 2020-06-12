@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %} 상세화면 입니다 {% endblock %}
+
+
+{% block content %}
+    <br><br>
+
+    <span class="btn btn-primary">{{ photo.author }}</span><br><br>
+    <img src="{{ photo.photo.url }}"><br><br><br>
+    <span class="btn btn-danger" style="width: 550px;">{{ photo.text |linebreaksbr}}</span><br><br><br><hr>
+
+    <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 panel panel-default">
+                {% load disqus_tags %}
+                {% disqus_show_comments %}
+            </div>
+            <div class="col-md-2"></div>
+    </div>
+{% endblock %}
